@@ -1,1 +1,4 @@
-print ("Hola mundo")
+
+
+if __name__ == "__main__":
+    print('Primer programa en Python')
