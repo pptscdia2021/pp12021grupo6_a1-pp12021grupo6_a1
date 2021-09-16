@@ -1,7 +1,6 @@
 
-def suma(a, b, c):
-    suma= a + b + c
-    return suma
+from suma import suma
+
 
 def Resta (n1, n2):
     resta= n1 - n2
