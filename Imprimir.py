@@ -1,4 +1,2 @@
 def parametro (texto, valor):
-    print (str (texto), int (valor))
-
-parametro ("julio", 16) 
+    print (str ("La impresion de texto y valor es: "), str (texto), int (valor))
