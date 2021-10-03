@@ -1,18 +1,16 @@
 
-def suma(a, b, c):
-    suma= a + b + c
-    return suma
+from Imprimir import parametro
+from producto import producto
+from suma import suma
+
 
 def Resta (n1, n2):
     resta= n1 - n2
     return resta
 
-def parametro (texto, valor):
-    print (str ("La impresion de texto y valor es: "), str (texto), int (valor))
 
-def producto (n1, n2, n3, n4):
-   producto= n1 * n2 * n3 * n4
-   return producto
+
+
 
 
 if __name__ == "__main__":
