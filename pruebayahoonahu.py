@@ -2,6 +2,7 @@ import yfinance as yf
 import pandas as pd
 import datetime
 import csv
+import numpy as np
 
 BancoSantanderSA = yf.Ticker("SAN")
 print(BancoSantanderSA.info['ask']) #Precio de compra acción
@@ -61,3 +62,19 @@ for i in df.index: #Saco los valores Maximos y Minimos correspondientes a cada d
     print("En la fecha "+ str(df["Fecha"][i])+ " la acción que tuvo la mejor variacion: "+str(df.max(axis = 1)[i]))
     print("En la fecha "+ str(df["Fecha"][i])+ " la acción que tuvo la peor variacion: "+str(df.min(axis = 1)[i]))
 
+'''
+cabecera = np.array(df.columns[2:]) #obtengo la cebacera (listado de columnas), desde la primera accion de interes o sea la tercera columna 
+print('Cabeceras: ', cabecera)
+df = pd.read_csv(f)
+
+for i in df.index: #Saco los valores Maximos y Minimos correspondientes a cada dia
+    acciones = np.array(df.iloc[i][2:])
+    #print(acciones)
+    vmax=acciones.max()
+    vmin=acciones.min()
+    accmax=cabecera[np.where(acciones==vmax)]
+    accmin=cabecera[np.where(acciones==vmin)]
+    print("En la fecha "+ str(df["Fecha"][i])+ " la mayor variacion fue ",vmax, "para ",accmax[0])
+    print("En la fecha "+ str(df["Fecha"][i])+ " la menor variacion fue ",vmin, "para ",accmin[0])
+
+'''
