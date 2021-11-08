@@ -11,12 +11,12 @@ acciones = ['SANTANDER', 'TELEFONICA', 'REPSOL', 'BBVA']
 for ticker in tickerStrings:
     data = yf.download(ticker, group_by="Ticker", period='1d')
     data['ticker'] = ticker  # Agrego una columna con el nombre de los tickers
-    data.to_csv(f'CSV/ticker_{ticker}.csv')  # creacion del CSV file
+    data.to_csv(f'TP2-WSyAPI/TP2-Nuevoprueba/CSV/ticker_{ticker}.csv')  # creacion del CSV file
 
-df1 = pd.read_csv('CSV/ticker_SAN.csv')
-df2 = pd.read_csv('CSV/ticker_TEF.csv')
-df3 = pd.read_csv('CSV/ticker_REP.MC.csv')
-df4 = pd.read_csv('CSV/ticker_BBVA.csv')
+df1 = pd.read_csv('TP2-WSyAPI/TP2-Nuevoprueba/CSV/ticker_SAN.csv')
+df2 = pd.read_csv('TP2-WSyAPI/TP2-Nuevoprueba/CSV/ticker_TEF.csv')
+df3 = pd.read_csv('TP2-WSyAPI/TP2-Nuevoprueba/CSV/ticker_REP.MC.csv')
+df4 = pd.read_csv('TP2-WSyAPI/TP2-Nuevoprueba/CSV/ticker_BBVA.csv')
 
 data = pd.concat([df1, df2, df3, df4], ignore_index=True)
 data
@@ -31,7 +31,7 @@ data.insert(1, "Nombre", acciones)
 data.insert(2, "Variacion", varYahoo)
 print(data)
 
-data.to_csv('CSV/Acciones_Yahoo.csv')
+data.to_csv('TP2-WSyAPI/TP2-Nuevoprueba/CSV/Acciones_Yahoo.csv')
 
 # Gráfico del valor de apertura de las acciones ultimos 5 dias.
 bbva_df= traerdato('SAN','5d')
@@ -64,7 +64,7 @@ plt.xlabel('DÍAS',fontsize=10)
 plt.ylabel('VALOR',fontsize=10)
 plt.legend()
 plt.tight_layout()
-plt.savefig('PNG/AccionesOpenYahoo.png')
+plt.savefig('TP2-WSyAPI/TP2-Nuevoprueba/PNG/AccionesOpenYahoo.png')
 
 # Grafico de variaciones de precios actual
 grafganper(data,'Variacion','Nombre',4,4)

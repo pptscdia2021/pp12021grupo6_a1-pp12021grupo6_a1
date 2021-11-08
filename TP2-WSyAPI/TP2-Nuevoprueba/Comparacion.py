@@ -3,8 +3,8 @@ import pandas as pd
 from Graficar import grafcompar
 
 
-bMadrid = pd.read_csv('CSV/bolsa_4acciones.csv')
-bYahoo = pd.read_csv('CSV/Acciones_Yahoo.csv')
+bMadrid = pd.read_csv('TP2-WSyAPI/TP2-Nuevoprueba/CSV/bolsa_4acciones.csv')
+bYahoo = pd.read_csv('TP2-WSyAPI/TP2-Nuevoprueba/CSV/Acciones_Yahoo.csv')
 
 grafcompar(bMadrid,bYahoo,'Variacion','Nombre',8,8)
 

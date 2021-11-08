@@ -45,14 +45,14 @@ for fila in tabla.find_all("tr"):
         nroCelda=nroCelda+1
     nroFila=nroFila+1
 
-    with open('CSV/bolsa_acciones.csv', 'a') as csv_file:
+    with open('TP2-WSyAPI/TP2-Nuevoprueba/CSV/bolsa_acciones.csv', 'a') as csv_file:
         writer = csv.writer(csv_file)
         writer.writerow([name, price , var , maxima , minima ,now.date()])
         
 
-df = pd.read_csv('CSV/bolsa_acciones.csv')
+df = pd.read_csv('TP2-WSyAPI/TP2-Nuevoprueba/CSV/bolsa_acciones.csv')
 df.columns = ["Nombre", "Precio", "Variacion", "Maxima", "Minima", "Fecha"]
-df.to_csv('CSV/bolsa_acciones.csv')
+df.to_csv('TP2-WSyAPI/TP2-Nuevoprueba/CSV/bolsa_acciones.csv')
 
 print(df)
 
@@ -89,7 +89,7 @@ print(minimo)
 df4= df.iloc [[7,33,30,10]]
 df4
 
-df4.to_csv('CSV/bolsa_4acciones.csv')
+df4.to_csv('TP2-WSyAPI/TP2-Nuevoprueba/CSV/bolsa_4acciones.csv')
 
 
 grafganper(df4,'Variacion','Nombre',5,5)
