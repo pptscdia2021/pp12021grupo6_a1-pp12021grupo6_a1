@@ -12,7 +12,9 @@ if __name__ == "__main__":
     data = bMadrid.extraccion(acciones)
     data = bMadrid.crearDF()
     print('----{0}----'.format('BolsaDeMadrid'))
+    print('----{0}----'.format('2 Acciones con Maxima Variacion'))
     print(bMadrid.maxminVar('Variacion%',2,'max'))
+    print('----{0}----'.format('2 Acciones con Minima Variacion'))
     print(bMadrid.maxminVar('Variacion%',2,'min'))
     bMadrid.crearCSV()
 
@@ -21,7 +23,9 @@ if __name__ == "__main__":
     data1 = datayf.crearDF()
     datayf.crearCSV()
     print('----{0}----'.format('YahooFinance'))
+    print('----{0}----'.format('2 Acciones con Maxima Variacion'))
     print(datayf.maxminVar('Variacion%',2,'max'))
+    print('----{0}----'.format('2 Acciones con Minima Variacion'))
     print(datayf.maxminVar('Variacion%',2,'min'))
 
     graf = gf(data,data1)
