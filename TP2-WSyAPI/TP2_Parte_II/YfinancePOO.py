@@ -25,7 +25,7 @@ class Yfinance:
         return self.tickers
     
     def crearCSV(self): # Creacion del CSV.
-        return self.tickers.to_csv('CSV/Yahoo.csv')
+        return self.tickers.to_csv('TP2-WSyAPI/TP2_Parte_II/CSV/Yahoo.csv')
         
     # Obtencion de las acciones con mayor variacion y menor variacion.
     def maxminVar(self,columna,cantidad,maxomin): # columna = 'Variacion%', cantidad = 2, maxomin = 'Max' o 'Min'.

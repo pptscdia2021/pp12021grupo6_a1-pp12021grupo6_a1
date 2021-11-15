@@ -6,7 +6,7 @@ class BolsaMadrid:
     def __init__(self, url, table): # Obtenemos todos los datos de la tabla de Bolsa de Madrid.
         self.url = url
         self.table_id = table
-        self.csv = 'CSV/BolsaMadrid.csv'
+        self.csv = 'TP2-WSyAPI/TP2_Parte_II/CSV/BolsaMadrid.csv'
         self.df = pd.read_html(url, attrs=self.table_id, thousands='.', decimal=',', flavor=None)[0]
         columnsName = ["Accion", "Cierre", "Variacion%", "Maximo", "Minimo", "Volumen", "Efectivo(miles €)", "Fecha", "Hora"]
         self.df.columns = columnsName
@@ -23,7 +23,7 @@ class BolsaMadrid:
         return self.df
     
     def crearCSV(self): # Creacion del CSV.
-        return self.df.to_csv('CSV/BolsaMadrid.csv')
+        return self.df.to_csv('TP2-WSyAPI/TP2_Parte_II/CSV/BolsaMadrid.csv')
     
     # Obtencion de las acciones con mayor variacion y menor variacion.
     def maxminVar(self,columna,cantidad,maxomin): # columna = 'Variacion%', cantidad = 2, maxomin = 'Max' o 'Min'.
